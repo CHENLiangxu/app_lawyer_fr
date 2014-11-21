@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" href="style.css" />
+    {% block head %}
+    <title>{% block title %}avocat{% endblock %}</title>
+    {% endblock %}
+</head>
+<body>
+    <div id="content">{% block content %}{% endblock %}</div>
+    <div id="footer">
+        {% block footer %}
+        &copy; Copyright 2014 by <a href="http://chenliangxu.zxq.net/">CHEN Liangxu.</a>
+        {% endblock %}
+    </div>
+</body>
