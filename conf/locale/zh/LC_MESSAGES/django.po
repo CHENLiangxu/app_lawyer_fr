@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
@@ -18,12 +19,12 @@ msgstr ""
 
 #: .\app\views.py:11
 msgid "welcome"
-msgstr "Bonjour"
+msgstr "你好"
 
 #: .\app\templates\index.html:6
 msgid "hello my lower"
-msgstr "Bonjour mon avocat"
+msgstr "你好啊"
 
 #: .\app\templates\lower_index.html:15
 msgid "New lower"
-msgstr "Ajoute avocat"
+msgstr "新律师"

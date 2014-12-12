@@ -36,9 +36,9 @@ TIME_ZONE = 'America/Chicago'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'en-us'
 LANGUAGE = (
-    ('en', ('English')),
-    ('fr', ('French')),
-    ('zh_cn', ('Chinese')),
+    ('en', 'English'),
+    ('fr', 'French'),
+    ('zh', 'Chinese'),
 )
 
 SITE_ID = 1
@@ -119,6 +119,9 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     'E:/document/appengine-try-python-django/myproject/app/templates',
+)
+LOCALE_PATHS = (
+    'E:/document/appengine-try-python-django/conf/locale',
 )
 
 INSTALLED_APPS = (
