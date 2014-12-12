@@ -3,9 +3,16 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.views import generic
 from django.core.urlresolvers import reverse
 from models import Lower, Client
-from forms import LowerForm
+from forms import LowerForm, ClientForm
+from django.utils.translation import ugettext, activate, get_language
 
 #django defaut listView
+def my_view(request):
+    output = ugettext("welcome")
+    old_lang = get_language()
+    output = repr(old_lang) + output
+    return HttpResponse(output)
+
 class LowerIndexView(generic.ListView):
     model = Lower
     template_name = "lower_index.html"
@@ -19,7 +26,6 @@ def lowerDetailView(request, lower_id):
 def CreateLowerView(request):
     if request.method == 'POST':
         data = request.POST
-        print data
         form = LowerForm(data)
         if form.is_valid():
             form.save()
@@ -38,3 +44,17 @@ class ClientIndexView(generic.ListView):
 def clientDetailView(request, client_id):
     client = get_object_or_404(Client, pk=client_id)
     return render(request, 'client_detail.html', {'client': client})
+
+#create and update the client
+def CreateClientView(request):
+    if request.method == 'POST':
+        data = request.POST
+        form = ClientForm(data)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('client')
+        else: 
+            return render(request, 'client_create.html', {'form': form})
+    else:
+        form = ClientForm()
+        return render(request, 'client_create.html', {'form': form})

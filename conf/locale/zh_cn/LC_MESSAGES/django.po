@@ -3,11 +3,12 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 20:14+0100\n"
+"POT-Creation-Date: 2014-12-11 20:40+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,8 +19,8 @@ msgstr ""
 
 #: .\app\views.py:11
 msgid "welcome"
-msgstr "Bonjour"
+msgstr "你好"
 
-#: .\app\templates\index.html:7
+#: .\app\templates\index.html:6
 msgid "hello my lower"
-msgstr "Bonjour mon avocat"
+msgstr "我很好"

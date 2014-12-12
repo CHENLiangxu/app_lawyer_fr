@@ -9,5 +9,7 @@ urlpatterns = patterns('',
     url(r'^lower_create$', views.CreateLowerView, name='lower_create'),
     url(r'^client$', views.ClientIndexView.as_view(), name='client_index'),
     url(r'^client/(?P<client_id>\d+)/$', views.clientDetailView, name='client_detail'),
+    url(r'^client_create$', views.CreateClientView, name='client_create'),
+    url(r'^test$', views.my_view),
     #url(r'^hello/$', TemplateView.as_view(template_name="client_info.html")),
 )
