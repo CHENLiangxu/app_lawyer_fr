@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}lawyer page{% endblock %}
+{% block title %}appointment page{% endblock %}
 {% block content %}
 {% if form.errors %}
     {% for field in form %}
@@ -15,9 +15,17 @@
         </div>
     {% endfor %}
 {% endif %}
-<form action="{% url 'lower_create' %}" method="post">
+<h2>hello {{target.adress}}</h2>
+<form action="{% url 'appointment_create' %}" method="post">
 {% csrf_token %}
-{{form.as_p}}
+<table>
+    <tr>
+        <td>{{form.date_rdv.label_tag}}</td>
+        <td><input type="datetime" name="date_rdv" value="{{now}}"/></td>
+    </tr>
+</table>
+<input type="hidden" id="id_target_user" name="target_user" value="{{target.id}}"/>
+<input type="hidden" id="id_lawyer" name="lawyer" value="1"/>
 <input type="submit" value="valide" />
 </form>
 {% endblock %}

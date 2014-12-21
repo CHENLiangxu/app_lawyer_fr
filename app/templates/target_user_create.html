@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}target user page{% endblock %}
+{% block content %}
+{% if form.errors %}
+    {% for field in form %}
+        {% for error in field.errors %}
+            <div class="alert alert-error">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endfor %}
+    {% for error in form.non_field_errors %}
+        <div class="alert alert-error">
+            <strong>{{ error|escape }}</strong>
+        </div>
+    {% endfor %}
+{% endif %}
+
+<form action="{% url 'target_user_create' %}" method="post">
+    {% csrf_token %}
+<table>
+<tr>
+    <td>{{ form.civilite.label_tag }}</td>
+    <td>{{ form.civilite }}</td>
+</tr>
+<tr>
+    <td>{{ form.telephone_protable.label_tag }}</td>
+    <td>{{ form.telephone_protable }}</td>
+</tr>
+<tr>
+    <td>{{ form.adress.label_tag }}</td>
+    <td>{{ form.adress }}</td>
+</tr>
+<tr>
+    <td>{{ form.code_postal.label_tag }}</td>
+    <td>{{ form.code_postal }}</td>
+</tr>
+<tr>
+    <td>{{ form.mail_invite.label_tag }}</td>
+    <td>{{ form.mail_invite }}</td>
+</tr>
+<tr>
+    <td>{{ form.date_naissance.label_tag }}</td>
+    <td><input type="date" name="date_naissance"/></td>
+</tr>
+</table>
+<input type="hidden" id="id_user" name="user" value="{{user.id}}" />
+<input type="submit" value="valide" />
+</form>
+{% endblock %}

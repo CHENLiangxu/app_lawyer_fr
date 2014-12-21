@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}lawyer page{% endblock %}
+{% block title %}user page{% endblock %}
 {% block content %}
 {% if form.errors %}
     {% for field in form %}
@@ -15,7 +15,7 @@
         </div>
     {% endfor %}
 {% endif %}
-<form action="{% url 'lower_create' %}" method="post">
+<form action="{% url 'user_create' %}" method="post">
 {% csrf_token %}
 {{form.as_p}}
 <input type="submit" value="valide" />

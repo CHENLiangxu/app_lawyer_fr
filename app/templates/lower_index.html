@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}client page{% endblock %}
+{% block title %}lawyer page{% endblock %}
 {% block content %}
 {% load i18n %}
 {% if lower_list %}
@@ -11,6 +11,6 @@
 {% else %}
     <p>No lower.</p>
 {% endif %}
-<hr />
+<hr>
 <a href="{% url 'lower_create' %}">{% trans "New lower" %}</a>
 {% endblock%}

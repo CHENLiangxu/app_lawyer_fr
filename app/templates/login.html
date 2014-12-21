@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}lawyer page{% endblock %}
+{% block title %}login page{% endblock %}
 {% block content %}
 {% if form.errors %}
     {% for field in form %}
@@ -15,7 +15,8 @@
         </div>
     {% endfor %}
 {% endif %}
-<form action="{% url 'lower_create' %}" method="post">
+<div class="alert alert-error"> {{ info }}</div>
+<form action="{% url 'login' %}" method="post">
 {% csrf_token %}
 {{form.as_p}}
 <input type="submit" value="valide" />

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}target user page{% endblock %}
+{% block content %}
+{% load i18n %}
+{% if target_user_list %}
+    <ul>
+    {% for target_user in target_user_list %}
+        <li><a href="/target_user/{{target_user.id}}">{{target_user.id}}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No target.</p>
+{% endif %}
+<hr>
+<a href="{% url 'user_create' %}">{% trans "New user" %}</a>
+{% endblock %}
